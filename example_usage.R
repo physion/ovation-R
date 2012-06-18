@@ -4,7 +4,7 @@
 library('Rovation')
 
 ## Open a DataContext
-context <- newDataContext('<connection file>, '<user name>')
+context <- NewDataContext('<connection file>, '<user name>')
 
 ## Get top-level objects from context.
 # Note that rJava (the R-Java bridge) uses $ instead of . to represent method calls.

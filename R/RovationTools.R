@@ -38,7 +38,7 @@ editQuery <- function
 	if(rv$status == ExpressionBuilder$RETURN_STATUS_OK)
 		return(rv$expressionTree)
 	else
-		return(expressionTree){
+		return(expressionTree)
 }
 
 
