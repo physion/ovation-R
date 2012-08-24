@@ -44,9 +44,7 @@ plot(seq(1,length(rData)),rData)
 
 
 ## Run a query and iterate the result
-# Because next is an R keyword, use the nextJavaIt method in Rovation to get the next object
+# Because next is an R keyword, use the iteratorNext method in Rovation to get the next object
 # from an iterator
 itr <- context$query(editQuery())
-while(itr$hasNext()){epoch <- nextJavaIt(itr)}
-}
-  }
+while(itr$hasNext()){epoch <- iteratorNext(itr)}
