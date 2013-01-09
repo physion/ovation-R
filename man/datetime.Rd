@@ -2,16 +2,8 @@
 \alias{datetime}
 \title{datetime}
 \description{Construct an Ovation timestamp from date components.}
-\usage{
-datetime(year,
-month,
-day,
-hour = 0,
-minute = 0,
-second = 0,
-millisecond = 0,
-timezone = character())
-}
+\usage{datetime(year, month, day, hour = 0, minute = 0, second = 0, 
+    millisecond = 0, timezone = character())}
 \arguments{
   \item{year}{
 }
@@ -31,7 +23,7 @@ timezone = character())
 }
 }
 
-\value{A DateTime object}
+
 
 \author{Romain Franconville}
 
