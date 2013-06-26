@@ -53,11 +53,12 @@ datetime <- function
 }
 
 iteratorNext <- function
-### Wrapper for applying the "next" method to an iterator, because "next" is a protected word in R
+### Wrapper for applying the "next" method to an iterator, because
+### "next" is a protected word in R
 (iterator)
 {
 	return(.jrcall(iterator,"next"))
-}
+      }
 
 list2map <- function
 ### Converts an R list to a Java map
