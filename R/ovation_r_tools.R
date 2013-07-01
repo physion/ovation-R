@@ -1,11 +1,11 @@
 NewDataContext <- function
 ### Returns a DataContext object after prompting for password
-(connection, login)
+(email)
 {
 	require(tcltk)  # The prompt uses the tcltk library
 	tt<-tktoplevel()
 	tkwm.geometry(tt,"+700+400")
-	tktitle(tt) <- "Log in OvationDB"
+	tktitle(tt) <- "ovation.io"
 	Password <- tclVar("") 
 	entry.Password <-tkentry(tt,width="20",textvariable=Password,show="*") 
 	tkgrid(tklabel(tt,text="Please enter your password.")) 
@@ -21,25 +21,25 @@ NewDataContext <- function
 	tkgrid(OK.but) 
 	tkwait.window(tt)
 	Ovation <- .jnew("ovation/Ovation")
-	dataContext <- Ovation$connect(connection,login,Password)
+	dataContext <- Ovation$connect(email,Password)
 	return(dataContext)
 	### A reference to a DataContext object
 }
 
-editQuery <- function
+EditQuery <- function
 ### Edit an Ovation query using the GUI query editor
-(expressionTree=.jnull(class="com/physion/ebuilder/expression/ExpressionTree"))
+(expression.tree=.jnull(class="com/physion/ebuilder/expression/ExpressionTree"))
 {
 	ExpressionBuilder <- J("com/physion/ebuilder/ExpressionBuilder")
-	rv <- ExpressionBuilder$editExpression(expressionTree)
+	rv <- ExpressionBuilder$editExpression(expression.tree)
 	if(rv$status == ExpressionBuilder$RETURN_STATUS_OK)
 		return(rv$expressionTree)
 	else
-		return(expressionTree)
+		return(expression.tree)
 }
 
 
-datetime <- function
+Datetime <- function
 ### Construct an Ovation timestamp from date components.
 (year,month,day,hour=0,minute=0,second=0,millisecond=0,timezone=character())
 {
@@ -52,7 +52,7 @@ datetime <- function
 	return(.jnew("org/joda/time/DateTime",as.integer(year),as.integer(month),as.integer(day),as.integer(hour),as.integer(minute),as.integer(second),as.integer(millisecond),timezone))
 }
 
-iteratorNext <- function
+IteratorNext <- function
 ### Wrapper for applying the "next" method to an iterator, because
 ### "next" is a protected word in R
 (iterator)
@@ -60,7 +60,7 @@ iteratorNext <- function
 	return(.jrcall(iterator,"next"))
       }
 
-list2map <- function
+List2Map <- function
 ### Converts an R list to a Java map
 (l)
 {
@@ -92,23 +92,9 @@ list2map <- function
 	### A Java map
 }
 
-numericData <- function
-### Constructs a NumericData object from an R vector
-(v)
+NumericData <- function
+### Constructs an empty NumericData object from an R vector
+(name, vec, units, sampling.rate, sampling.rate.units)
 {
-	return(.jnew("ovation.NumericData", v))
-}
-
-NUMERIC_DATA_UTI <- function
-### Exposes the IResponseData.NUMERIC_DATA_UTI
-() 
-{
-	return(.jfield("ovation.IResponseData", name="NUMERIC_DATA_UTI")) # UTI for numeric data
-}
-
-TIFF_DATA_UTI <- function
-### Exposes the IResponseData.TIFF_DATA_UTI
-() 
-{
-	return(.jfield("ovation.IResponseData", name="TIFF_DATA_UTI")) # UTI for numeric data
+	return(.jnew("ovation.NumericData")$addData(name, vec, units, sampling.rate, sampling.rate.units))
 }
