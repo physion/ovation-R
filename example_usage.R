@@ -4,20 +4,20 @@
 library('Rovation')
 
 ## Open a DataContext
-context <- NewDataContext('<connection file>, '<user name>')
+context <- NewDataContext('<user email>')
 
 ## Get top-level objects from context.
 # Note that rJava (the R-Java bridge) uses $ instead of . to represent method calls.
 # So context.getProjects() in Java becomes context$getProjects() in R.
-projs <- context$getProjects()
+projs <- as.list(context$getProjects())
 projs[[1]]$getPurpose()
 
 ## Plot a response
 # You can use as.list to convert a Java array to an R array
 exps<-as.list(projs[[1]]$getExperiments())
-epochs <- as.list(exps[[1]]$getEpochsIterable())
+epochs <- as.list(exps[[1]]$getEpochs())
 epochs[[1]]
-responses <- as.list(epochs[[1]]$getResponseIterable())
+responses <- as.list(epochs[[1]]$getResponses())
 rData <- as.list(responses[[1]]$getFloatingPointData())
 plot(seq(1,length(rData)),rData)
 
@@ -27,5 +27,5 @@ plot(seq(1,length(rData)),rData)
 # from an iterator
 itr <- context$query(editQuery())
 while(itr$hasNext())
-	epoch <- iteratorNext(itr)
+	epoch <- IteratorNext(itr)
 end
