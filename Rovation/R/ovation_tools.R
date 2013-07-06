@@ -20,11 +20,77 @@ NewDataContext <- function(email)
     tkbind(entry.Password, "<Return>",OnOK) 
     tkgrid(OK.but) 
     tkwait.window(tt)
-    Ovation <- .jnew("ovation/Ovation")
+    Ovation <- .jnew("us/physion/ovation/api/Ovation")
     dsc <- Ovation$connect(email, Password)
     
     return(dsc$getContext())
     ### A reference to a DataContext object
+}
+
+NewUrl <- function(path)
+{
+    ### Returns a new file:// java.net.URL with the given path. Path may be absolute
+    ### or relative to the current working directory.
+    
+    file <- .jnew("java/io/File", path)
+    
+    return(file$toURI()$toURL())
+    ### Newly created java.net.URL
+}
+
+Vector2Set <- function(vec)
+{
+    ### Converts an R vector to a java.util.Set. Equal objects are only represented once in the resulting set, even
+    ### if they are present more than once in the input vector.
+    HashSet <- J("java.util.HashSet")
+    Double <- J("java.lang.Double")
+    Integer <- J("java.lang.Integer")
+    
+    h <- new(HashSet)
+    
+    for(v in vec) {
+      if(is.numeric(v)) {
+        if(is.integer(v)) {
+          value <- new(Integer, v)
+        } else {
+          value <- new(Double, v)  
+        }
+      } else {
+        value <- v
+      }
+      
+      h$add(value)
+    }
+    
+    return (h)
+}
+
+Vector2List <- function(vec)
+{
+  ###Converts an R vector to a java.util.List.
+  
+  
+  Double <- J("java.lang.Double")
+  Integer <- J("java.lang.Integer")
+  
+  ArrayList <- J("java.util.ArrayList")
+  l <- new(ArrayList)
+  
+  for(v in vec) {
+    if(is.numeric(v)) {
+      if(is.integer(v)) {
+        value <- new(Integer, v)
+      } else {
+        value <- new(Double, v)  
+      }
+    } else {
+      value <- v
+    }
+    
+    l$add(value)
+  }
+  
+  return (l)
 }
 
 EditQuery <- function(expression.tree=.jnull(class="com/physion/ebuilder/expression/ExpressionTree"))
