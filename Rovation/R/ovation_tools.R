@@ -20,7 +20,9 @@ NewDataContext <- function(email)
     tkbind(entry.Password, "<Return>",OnOK) 
     tkgrid(OK.but) 
     tkwait.window(tt)
+    
     Ovation <- .jnew("us/physion/ovation/api/Ovation")
+    
     dsc <- Ovation$connect(email, Password)
     
     return(dsc$getContext())

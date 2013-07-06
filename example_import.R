@@ -3,16 +3,16 @@
 library(Rovation)
 
 # Connect to the database
-context <- NewDataContext("ec2-107-22-113-107.compute-1.amazonaws.com::/var/lib/ovation/data/hofmann.connection", "ross")
+context <- NewDataContext("<user email>")
 
 # Insert a new project starting 6/20/2012 with given project name and purpose
 project <- context$insertProject("project name", "project purpose", datetime(2012, 6, 20, timezone="America/New_York"))
 
 # Next time, you can retrieve all projects with the given name
-projects <- context$getProjects("project name")
+projects <- as.list(context$getProjects("project name"))
 
 # Create a Source. The label should identify the type of source (e.g. "genus")
-genusSource <- context$insertSource("genus")
+genusSource <- context$insertSource("genus", "<genus name>")
 # Add a property to the source (you can retrieve the property with genusSource$getOwnerProperty("genus-name"))
 genusSource$addProperty("genus-name", "A genus name")
 
