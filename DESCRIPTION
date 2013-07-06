@@ -1,12 +1,12 @@
 Package: Rovation
 Type: Package
 Title: R Interface to the Ovation Scientific Data Management System
-Version: 0.0.2
-Date: 2012-09-05
-Author: Romain Franconville
+Version: 2.0-beta2
+Date: 2013-07-05
+Author: Romain Franconville, Barry Wark
 Depends: rJava,tcltk
 SystemRequirements : Java
-Maintainer: Romain Franconville <franconviller@janelia.hhmi.org>
-Description: A set of utility allowing the user to access and modify an Ovation database (http://physionconsulting.com/web/Ovation.html)
+Maintainer: Physion <info@physion.us>
+Description: R API for the Ovation Scientific Data Management System (http://ovation.io)
 License: BSD
 LazyLoad: yes
