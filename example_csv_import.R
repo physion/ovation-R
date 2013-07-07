@@ -37,7 +37,7 @@ measurement <- epoch$insertMeasurement("table1", # Measurement name
 fs <- context$getFileService()
 TimeUnit <- J("java.util.concurrent.TimeUnit")
 Long <- J("java.lang.Long")
-fs$waitForPendingUploads(new(Long, "60"), $MINUTES)
+fs$waitForPendingUploads(as.integer(60), TimeUnit$MINUTES)
   
 
 ## Retrieve the DataFrame from measurement
