@@ -167,3 +167,14 @@ NumericData <- function(name, vec, units, sampling.rate, sampling.rate.units)
     
     return(.jnew("ovation.NumericData")$addData(name, vec, units, sampling.rate, sampling.rate.units))
 }
+
+WaitForPendingUploads <- function(context, timeout.seconds = 600)
+{
+    ### Waits for all pending uploads from context to complete
+
+    TimeUnit <- J("java.util.concurrent.TimeUnit")    
+
+    fs <- context$getFileService()
+    
+    return(fs$waitForPendingUploads(.jlong(timeout.seconds), TimeUnit$SECONDS))
+}

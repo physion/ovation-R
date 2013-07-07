@@ -5,4 +5,5 @@ export(NewDataContext,
         Vector2List,
         Datetime,
         IteratorNext,
-        NumericData)
+        NumericData,
+        WaitForPendingUploads)
