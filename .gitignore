@@ -10,7 +10,10 @@ Rovation.Rcheck
 Rovation/..Rcheck
 
 # Distribution
-Rovation_2.0-*.tar.gz
+Rovation_2.0*.tar.gz
+Rovation_2.0*.tgz
 
 # RStudio
 .Rproj.user
+
+.Rhistory
