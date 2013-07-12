@@ -1,19 +1,17 @@
 \name{IteratorNext}
 \alias{IteratorNext}
-\title{IteratorNext}
-\description{Wrapper for applying the "next" method to an iterator, because
-"next" is a protected word in R}
-\usage{IteratorNext(iterator)}
+\title{Calls the \code{next} method on a Java iterator.}
+\usage{
+  IteratorNext(iterator)
+}
 \arguments{
-  \item{iterator}{
+  \item{iterator}{Java iterator}
 }
+\value{
+  result of iterator$next()
 }
-
-
-
-\author{Romain Franconville}
-
-
-
-
+\description{
+  Because "next" is a reserved keyword in R, calling
+  \code{iterator$next()} fails.
+}
 

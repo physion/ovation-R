@@ -1,18 +1,17 @@
 \name{List2Map}
 \alias{List2Map}
-\title{List2Map}
-\description{Converts an R list to a Java map}
-\usage{List2Map(l)}
+\title{Creates a \code{java.util.Map} from the contents of an R list}
+\usage{
+  List2Map(l)
+}
 \arguments{
-  \item{l}{
+  \item{l}{R list}
 }
+\value{
+  \code{Map} with the same keys and values as \code{l}
 }
-
-\value{A Java map}
-
-\author{Romain Franconville}
-
-
-
-
+\description{
+  Creates a \code{java.util.Map} from the contents of an R
+  list
+}
 

@@ -1,18 +1,20 @@
 \name{NewDataContext}
 \alias{NewDataContext}
-\title{IteratorNext}
-\description{Create a new authenticated DataContext for an Ovation database}
-\usage{NewDataContext(email)}
+\title{Builds a new DataContext (connection) to the Ovation database}
+\usage{
+  NewDataContext(email)
+}
 \arguments{
-  \item{email}{
+  \item{email}{registered ovation.io email}
 }
+\value{
+  new \code{DataContext}
 }
-
-\value{Authenticated DataContext}
-
-\author{Romain Franconville}
-
-
-
-
+\description{
+  \code{NewDataContext} connects to the local Ovation
+  database using the provided user email and entered
+  password. After establishing a connection to the
+  database, a new \code{DataContext} is created and
+  returned.
+}
 

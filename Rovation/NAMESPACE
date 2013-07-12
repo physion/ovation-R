@@ -1,9 +1,8 @@
-import(rJava)
-export(NewDataContext,
-        NewUrl,
-        Vector2Set,
-        Vector2List,
-        Datetime,
-        IteratorNext,
-        NumericData,
-        WaitForPendingUploads)
+export(Datetime)
+export(IteratorNext)
+export(NewDataContext)
+export(NewUrl)
+export(NumericData)
+export(Vector2List)
+export(Vector2Set)
+export(WaitForPendingUploads)

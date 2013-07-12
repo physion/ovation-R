@@ -9,7 +9,8 @@ Rovation/inst/java/ovation-*.jar
 Rovation.Rcheck
 Rovation/..Rcheck
 
-Rovation_2.0-1.tar.gz
+# Distribution
+Rovation_2.0-*.tar.gz
 
-Rovation_2.0-beta2.tar.gz
+# RStudio
 .Rproj.user
