@@ -17,8 +17,8 @@ NewDataContext <- function(email)
   tkwm.geometry(tt, "+700+400")
   tktitle(tt) <- "ovation.io"
   Password <- tclVar("") 
-  entry.Password <-tkentry(tt, width="20", textvariable=Password, show="*") 
-  tkgrid(tklabel(tt,text="Please enter your password.")) 
+  entry.Password <-tkentry(tt, width="25", textvariable=Password, show="*") 
+  tkgrid(tklabel(tt,text="Ovation password:")) 
   tkgrid(entry.Password)
   OnOK <- function() 
   { 
