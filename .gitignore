@@ -3,7 +3,7 @@
 .DS_Store
 
 # JARs
-Rovation/inst/java/ovation-*.jar
+Rovation/inst/java/*.jar
 
 # Rcheck
 Rovation.Rcheck
