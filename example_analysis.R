@@ -22,8 +22,12 @@ CollectEpochs <- function(container) {
   return(epochs);
 }
 
-## Collect Measurement data frames from legacy data
-CollectLegacyMeasurements <- function(epochs, species) {
+#' Collect Measurement data frames from legacy CSV data
+#' 
+#' @param epochs list of Epochs
+#' @return Data Frame matching legacy CSV columns
+#' @export
+CollectLegacyMeasurements <- function(epochs) {
   result <- data.frame()
   for(e in epochs) {
     date <- e$getStart()
@@ -47,14 +51,12 @@ CollectLegacyMeasurements <- function(epochs, species) {
                                      SPECIES=m$getName(),
                                      YEAR=date$getYear(),
                                      DOY=date$getDayOfYear(),
-                                     `# FLOWERS` = df$X..FLOWERS,
+                                     `# FLOWERS` = df$FLOWER_COUNT,
                                      HABITAT=habitat)
         
         result <- rbind(result, measurement.df)
       }
     }
-    
-    return(result);
   }
     
   return(result)
