@@ -170,6 +170,7 @@ IteratorNext <- function(iterator)
 #' 
 #' @param l R list
 #' @return \code{Map} with the same keys and values as \code{l}
+#' @export
 List2Map <- function(l)
 {
   keys <- names(l)
