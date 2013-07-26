@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>us.physion</groupId>
+	<artifactId>ovation-r</artifactId>
+	<version>2.0.0-beta.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>ovation-r</name>
+	<url>http://ovation.io</url>
+	<inceptionYear>2010</inceptionYear>
+  
+	<organization>
+		<name>Physion Consulting LLC</name>
+		<url>http://www.physionconsulting.com</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<configuration>
+							<executable>build_package.sh</executable>
+							<workingDirectory>${basedir}</workingDirectory>
+							<arguments>
+							</arguments>
+							<environmentVariables>
+							</environmentVariables>
+						</configuration>
+						<id>build-package</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <outputDirectory>${basedir}/Rovation/inst/java</outputDirectory>
+                </configuration>
+            </plugin>
+		</plugins>
+
+		<extensions>  
+			<extension>
+				<groupId>org.springframework.build</groupId>
+				<artifactId>aws-maven</artifactId>
+				<version>4.4.0.RELEASE</version>
+			</extension>
+		</extensions>  
+	</build>
+	
+	<repositories>
+		<repository>
+			<id>s3-release-repository</id>
+			<name>S3 Release Repository</name>
+			<url>s3://us.physion.maven/release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>s3-snapshot-repository</id>
+			<name>S3 Snapshot Repository</name>
+			<url>s3://us.physion.maven/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<dependencies>
+		<dependency>
+			<groupId>us.physion</groupId>
+			<artifactId>ovation-assembly</artifactId>
+			<version>2.0.0-beta.3-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
