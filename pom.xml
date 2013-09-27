@@ -4,7 +4,7 @@
 
 	<groupId>us.physion</groupId>
 	<artifactId>ovation-r</artifactId>
-	<version>2.0.0-beta5</version>
+	<version>2.0.0-beta6</version>
 	<packaging>pom</packaging>
 
 	<name>ovation-r</name>
@@ -12,8 +12,8 @@
 	<inceptionYear>2010</inceptionYear>
   
 	<organization>
-		<name>Physion Consulting LLC</name>
-		<url>http://www.physionconsulting.com</url>
+		<name>Physion LLC</name>
+		<url>http://www.physion.us</url>
 	</organization>
 
 	<properties>
@@ -74,40 +74,40 @@
 	</build>
 	
 	<repositories>
-		<repository>
-			<id>s3-release-repository</id>
-			<name>S3 Release Repository</name>
-			<url>s3://us.physion.maven/release</url>
+        <repository>
+            <id>s3-ovation-release-repository</id>
+            <name>AWS Release Repository</name>
+            <url>s3://maven.ovation.io/release</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
-		<repository>
-			<id>s3-snapshot-repository</id>
-			<name>S3 Snapshot Repository</name>
-			<url>s3://us.physion.maven/snapshot</url>
+        </repository>
+        <repository>
+            <id>s3-ovation-snapshot-repository</id>
+            <name>AWS Snapshot Repository</name>
+            <url>s3://maven.ovation.io/snapshot</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+        </repositories>
 	</repositories>
 	
 	<dependencies>
 		<dependency>
 			<groupId>us.physion</groupId>
 			<artifactId>ovation-api</artifactId>
-			<version>2.0.0-beta5</version>
+			<version>2.0.0-beta6</version>
 		</dependency>
 		<dependency>
 			<groupId>us.physion</groupId>
 			<artifactId>ovation-test-utils</artifactId>
-			<version>2.0.0-beta5</version>
+			<version>2.0.0-beta6</version>
 		</dependency>
 	</dependencies>
 </project>
