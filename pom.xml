@@ -95,7 +95,7 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-        </repositories>
+        </repository>
 	</repositories>
 	
 	<dependencies>
