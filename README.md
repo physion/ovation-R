@@ -8,7 +8,7 @@ The Ovation R API wraps the Ovation Java API for use with the R statistical comp
 ## Requirements
 
 * Java 1.6+
-* R 2.15.0+
+* R 3.0.1+
 
 ## Installation
 
