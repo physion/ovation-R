@@ -7,8 +7,8 @@
 \tabular{ll}{Package: \tab Rovation\cr
 Type: \tab Package\cr
 Title: \tab R Interface to the Ovation Scientific Data Management System\cr
-Version: \tab 2.0-beta2\cr
-Date: \tab 2013-07-01\cr
+Version: \tab 2.1.0\cr
+Date: \tab 2013-12-22\cr
 Author: \tab Romain Franconville, Barry Wark\cr
 Depends: \tab rJava,tcltk\cr
 SystemRequirements : \tab Java\cr
@@ -16,7 +16,7 @@ Maintainer: \tab Physion Consulting <support@ovation.io>\cr
 License: \tab BSD\cr
 LazyLoad: \tab yes\cr}
 }
-\author{Physion Consulting}
+\author{Physion}
 
 \keyword{ package }
 
