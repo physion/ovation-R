@@ -1,8 +1,8 @@
 Package: Rovation
 Type: Package
 Title: R Interface to the Ovation Scientific Data Management System
-Version: 2.1-14
-Date: 2014-03-10
+Version: 2.1-25
+Date: 2014-6-30
 Author: Physion, Romain Franconville
 Depends:
     rJava,tcltk
